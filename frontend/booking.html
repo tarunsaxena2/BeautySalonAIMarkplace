@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Book Appointment</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+<dir><h1>Beauty Salon Marketplace</h1>
+
+<nav>
+
+<a href="dashboard.html">Home</a>
+
+<a href="mybookings.html">My Bookings</a>
+
+<a href="chat.html">AI Assistant</a>
+
+<a href="profile.html">Profile</a>
+
+<button onclick="logout()">Logout</button>
+
+</nav></dir>
+</header>
+<!-- ===========================
+Payment Summary
+=========================== -->
+
+<div class="payment-card card">
+
+<h2>💳 Payment Summary</h2>
+
+<div class="payment-row">
+<span>Service Charge</span>
+<span id="servicePrice">₹499</span>
+</div>
+
+<div class="payment-row">
+<span>GST (18%)</span>
+<span id="gstPrice">₹90</span>
+</div>
+
+<div class="payment-row">
+<span>Platform Fee</span>
+<span>₹50</span>
+</div>
+
+<hr>
+
+<div class="payment-row total">
+
+<strong>Total Amount</strong>
+
+<strong id="totalPrice">₹639</strong>
+
+</div>
+
+<button class="confirm-btn" onclick="bookAppointment()">
+
+Confirm Booking
+
+</button>
+
+</div>
+
+<!-- ===========================
+Success Modal
+=========================== -->
+
+<div id="successModal" class="modal">
+
+<div class="modal-content">
+
+<h1>🎉</h1>
+
+<h2>Booking Confirmed</h2>
+
+<p>
+
+Your appointment has been booked successfully.
+
+</p>
+
+<button onclick="goBookings()">
+
+View My Bookings
+
+</button>
+
+</div>
+
+</div>
+
+<div class="booking-container">
+
+<div class="booking-form">
+
+<h1>
+
+Book Your Appointment
+
+</h1>
+
+<div class="form-group">
+
+<label>
+
+Select Salon
+
+</label>
+
+<select id="salon">
+
+<option>
+
+Royal Beauty Lounge
+
+</option>
+
+<option>
+
+Glow & Shine Salon
+
+</option>
+
+<option>
+
+Luxury Spa Studio
+
+</option>
+
+<option>
+
+Elite Hair Studio
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Choose Service
+
+</label>
+
+<select id="service">
+
+<option>
+
+Haircut
+
+</option>
+
+<option>
+
+Hair Spa
+
+</option>
+
+<option>
+
+Facial
+
+</option>
+
+<option>
+
+Bridal Makeup
+
+</option>
+
+<option>
+
+Hair Coloring
+
+</option>
+
+<option>
+
+Massage
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Appointment Date
+
+</label>
+
+<input
+
+type="date"
+
+id="date"
+
+>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Select Time
+
+</label>
+
+<select id="time">
+
+<option>
+
+10:00 AM
+
+</option>
+
+<option>
+
+11:00 AM
+
+</option>
+
+<option>
+
+12:00 PM
+
+</option>
+
+<option>
+
+01:00 PM
+
+</option>
+
+<option>
+
+02:00 PM
+
+</option>
+
+<option>
+
+03:00 PM
+
+</option>
+
+<option>
+
+04:00 PM
+
+</option>
+
+<option>
+
+05:00 PM
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Special Notes
+
+</label>
+
+<textarea
+
+rows="5"
+
+id="notes"
+
+placeholder="Any special request?"
+
+></textarea>
+
+</div>
+
+</div>
+
+<div class="booking-summary">
+
+<img
+
+src="images/salon1.jpg"
+
+style="width:100%;border-radius:20px;"
+
+>
+
+<h2>
+
+Appointment Summary
+
+</h2>
+
+<p>
+
+Salon:
+<b id="salonName">
+
+Royal Beauty Lounge
+
+</b>
+
+</p>
+
+<p>
+
+Service:
+<b id="serviceName">
+
+Haircut
+
+</b>
+
+</p>
+
+<p>
+
+Price:
+<b>
+
+₹499
+
+</b>
+
+</p>
+
+<p>
+
+Duration:
+<b>
+
+45 Minutes
+
+</b>
+
+</p>
+
+<button
+
+id="confirmBtn"
+
+>
+
+Confirm Booking
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const salon=document.getElementById("salon");
+
+const service=document.getElementById("service");
+
+salon.onchange=()=>{
+
+document.getElementById("salonName").innerHTML=salon.value;
+
+}
+
+service.onchange=()=>{
+
+document.getElementById("serviceName").innerHTML=service.value;
+
+}
+
+function logout(){
+
+localStorage.clear();
+
+window.location="login.html";
+
+}
+
+
+// ==========================
+// User Data
+// ==========================
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+if(user){
+
+console.log("Welcome", user.full_name || user.name);
+
+}
+
+// ==========================
+// Elements
+// ==========================
+
+const salon = document.getElementById("salon");
+const service = document.getElementById("service");
+const date = document.getElementById("date");
+const time = document.getElementById("time");
+const notes = document.getElementById("notes");
+
+// ==========================
+// Prices
+// ==========================
+
+const prices = {
+
+"Haircut":499,
+"Hair Spa":799,
+"Facial":699,
+"Bridal Makeup":1999,
+"Hair Coloring":999,
+"Massage":1299
+
+};
+
+// ==========================
+// Update Summary
+// ==========================
+
+function updateSummary(){
+
+const serviceName = service.value;
+
+const price = prices[serviceName];
+
+const gst = Math.round(price * 0.18);
+
+const total = price + gst + 50;
+
+document.getElementById("salonName").innerHTML = salon.value;
+
+document.getElementById("serviceName").innerHTML = serviceName;
+
+document.getElementById("servicePrice").innerHTML = "₹" + price;
+
+document.getElementById("gstPrice").innerHTML = "₹" + gst;
+
+document.getElementById("totalPrice").innerHTML = "₹" + total;
+
+}
+
+salon.addEventListener("change", updateSummary);
+
+service.addEventListener("change", updateSummary);
+
+updateSummary();
+
+// ==========================
+// Booking API
+// ==========================
+
+async function bookAppointment(){
+
+if(date.value==""){
+
+alert("Please select appointment date.");
+
+return;
+
+}
+
+const booking={
+
+salon:salon.value,
+
+service:service.value,
+
+date:date.value,
+
+time:time.value,
+
+notes:notes.value
+
+};
+
+try{
+
+const token = localStorage.getItem("token");
+
+const response = await fetch(
+
+"http://localhost:5000/api/bookings",
+
+{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":"application/json",
+
+Authorization:"Bearer "+token
+
+},
+
+body:JSON.stringify(booking)
+
+}
+
+);
+
+const data = await response.json();
+
+if(response.ok){
+
+document.getElementById("successModal").style.display="flex";
+
+}else{
+
+alert(data.message || "Booking Failed");
+
+}
+
+}catch(error){
+
+console.log(error);
+
+alert("Server Error");
+
+}
+
+}
+
+// ==========================
+// Redirect
+// ==========================
+
+function goBookings(){
+
+window.location.href="mybookings.html";
+
+}
+
+// ==========================
+// Today's Date Minimum
+// ==========================
+
+const today = new Date().toISOString().split("T")[0];
+
+date.min = today;
+
+
+</script>
+
+</body>
+
+</html>

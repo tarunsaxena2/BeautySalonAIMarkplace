@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Bookings | BeautyAI</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header>
+
+<div class="logo">
+
+💄 <span>BeautyAI</span>
+
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="booking.html">Book Salon</a>
+
+<a href="chat.html">AI Assistant</a>
+
+<a href="profile.html">Profile</a>
+
+<a href="#" onclick="logout()">Logout</a>
+
+</nav>
+
+</header>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>BeautyAI</h2>
+
+<ul>
+
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+<li><a href="booking.html">📅 Book Salon</a></li>
+
+<li><a href="mybookings.html">📖 My Bookings</a></li>
+
+<li><a href="chat.html">🤖 AI Assistant</a></li>
+
+<li><a href="profile.html">👤 Profile</a></li>
+
+<li><a href="#" onclick="logout()">🚪 Logout</a></li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="welcome">
+
+<div>
+
+<h1>
+
+📖 My Bookings
+
+</h1>
+
+<p>
+
+View and manage all your salon appointments.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Search -->
+
+<div class="search">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search bookings by salon or service...">
+
+</div>
+
+<!-- Booking Table -->
+
+<div class="table-container">
+
+<table id="bookingTable">
+
+<thead>
+
+<tr>
+
+<th>Salon</th>
+
+<th>Service</th>
+
+<th>Date</th>
+
+<th>Time</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="bookingBody">
+
+<!-- Booking rows Part 2 me add honge -->
+ <!-- Booking 1 -->
+
+<tr class="booking-row">
+
+<td>
+
+Royal Beauty Lounge
+
+</td>
+
+<td>
+
+Haircut
+
+</td>
+
+<td>
+
+25 June 2026
+
+</td>
+
+<td>
+
+11:00 AM
+
+</td>
+
+<td>
+
+<span class="badge approved">
+
+Approved
+
+</span>
+
+</td>
+
+<td>
+
+<button
+class="delete-btn"
+onclick="cancelBooking(this)">
+Cancel
+</button>
+
+</td>
+
+</tr>
+
+<!-- Booking 2 -->
+
+<tr class="booking-row">
+
+<td>
+
+Glow & Shine Salon
+
+</td>
+
+<td>
+
+Facial
+
+</td>
+
+<td>
+
+28 June 2026
+
+</td>
+
+<td>
+
+02:00 PM
+
+</td>
+
+<td>
+
+<span class="badge pending">
+
+Pending
+
+</span>
+
+</td>
+
+<td>
+
+<button
+class="delete-btn"
+onclick="cancelBooking(this)">
+Cancel
+</button>
+
+</td>
+
+</tr>
+
+<!-- Booking 3 -->
+
+<tr class="booking-row">
+
+<td>
+
+Luxury Spa Studio
+
+</td>
+
+<td>
+
+Massage
+
+</td>
+
+<td>
+
+30 June 2026
+
+</td>
+
+<td>
+
+04:00 PM
+
+</td>
+
+<td>
+
+<span class="badge rejected">
+
+Rejected
+
+</span>
+
+</td>
+
+<td>
+
+<button
+class="delete-btn"
+onclick="cancelBooking(this)">
+Remove
+</button>
+
+</td>
+
+</tr>
+
+<!-- Booking 4 -->
+
+<tr class="booking-row">
+
+<td>
+
+Elite Hair Studio
+
+</td>
+
+<td>
+
+Hair Coloring
+
+</td>
+
+<td>
+
+03 July 2026
+
+</td>
+
+<td>
+
+01:00 PM
+
+</td>
+
+<td>
+
+<span class="badge approved">
+
+Approved
+
+</span>
+
+</td>
+
+<td>
+
+<button
+class="delete-btn"
+onclick="cancelBooking(this)">
+Cancel
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<script src="js/mybookings.js"></script>
+</body>
+
+</html>

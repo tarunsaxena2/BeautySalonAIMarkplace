@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0f172a,#1e293b);
+  color: white;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
+
+header h1 {
+  font-size: 20px;
+  color: #38bdf8;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #dc2626;
+}
+
+/* HERO CARD */
+.hero {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GLASS BOX */
+.form-box {
+  width: 350px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #22c55e;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.register-btn:hover {
+  background: #16a34a;
+}
+</style>
+
+</head>
+
+<body>
+
+<dir>
+  <h4>Beauty Salon Marketplace</h4>
+
+ 
+</dir>
+
+
+<div class="hero">
+
+  <div class="form-box">
+    <h2>Register</h2>
+
+    <input id="name" placeholder="Full Name">
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <button class="register-btn" onclick="register()">
+      Register
+    </button>
+  </div>
+
+</div>
+
+<script src="js/register.js"></script>
+
+</body>
+</html>

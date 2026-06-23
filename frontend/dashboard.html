@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | BeautyAI</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Header -->
+ <dir>
+  <h4>Beauty Salon Marketplace</h4>
+
+ 
+</dir>
+
+
+<div class="logo">
+💄 <span>BeautyAI</span>
+</div>
+
+
+
+
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>BeautyAI</h2>
+
+<ul>
+
+<li>
+<a href="dashboard.html">🏠 Dashboard</a>
+</li>
+
+<li>
+<a href="booking.html">📅 Book Salon</a>
+</li>
+
+<li>
+<a href="mybookings.html">📖 My Bookings</a>
+</li>
+
+<li>
+<a href="chat.html">🤖 AI Assistant</a>
+</li>
+
+<li>
+<a href="profile.html">👤 Profile</a>
+</li>
+
+<li>
+<a href="#" onclick="logout()">🚪 Logout</a>
+<a href="#" onclick="logout()">Logout</a>
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="welcome">
+
+<div>
+
+<h1>
+
+Welcome,
+
+<span id="username">User</span>
+
+👋
+
+</h1>
+
+<p>
+
+Book premium salons with AI-powered recommendations.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Search -->
+
+<div class="search">
+
+<input
+type="text"
+placeholder="Search salon, services..."
+id="searchInput">
+
+</div>
+
+<!-- Statistics -->
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h4>Total Salons</h4>
+
+<h2>25+</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h4>My Bookings</h4>
+
+<h2 id="bookingCount">0</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h4>AI Consultations</h4>
+
+<h2>Unlimited</h2>
+
+</div>
+
+<div class="stat-card">
+
+<h4>Rating</h4>
+
+<h2>⭐ 4.9</h2>
+
+</div>
+
+</div>
+
+<!-- Salon Grid -->
+
+<div class="salon-grid" id="salonGrid">
+
+<!-- Cards Part 2 me aayenge -->
+<!-- Salon Card 1 -->
+
+<div class="salon-card">
+
+<img src="images/salon1.jpg" alt="Salon">
+
+<div class="salon-info">
+
+<h2>Royal Beauty Lounge</h2>
+
+<div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+
+<p>📍 Delhi</p>
+
+<p>💇 Haircut • Facial • Makeup</p>
+
+<p><strong>₹499 onwards</strong></p>
+
+<a href="booking.html">
+<button>Book Now</button>
+</a>
+
+</div>
+
+</div>
+
+<!-- Salon Card 2 -->
+
+<div class="salon-card">
+
+<img src="images/salon2.jpg" alt="Salon">
+
+<div class="salon-info">
+
+<h2>Glow & Shine Salon</h2>
+
+<div class="rating">⭐⭐⭐⭐☆ (4.8)</div>
+
+<p>📍 Noida</p>
+
+<p>✨ Hair Spa • Bridal Makeup</p>
+
+<p><strong>₹699 onwards</strong></p>
+
+<a href="booking.html">
+<button>Book Now</button>
+</a>
+
+</div>
+
+</div>
+
+<!-- Salon Card 3 -->
+
+<div class="salon-card">
+
+<img src="images/salon3.jpg" alt="Salon">
+
+<div class="salon-info">
+
+<h2>Luxury Spa Studio</h2>
+
+<div class="rating">⭐⭐⭐⭐⭐ (5.0)</div>
+
+<p>📍 Gurugram</p>
+
+<p>🌿 Facial • Massage • Spa</p>
+
+<p><strong>₹999 onwards</strong></p>
+
+<a href="booking.html">
+<button>Book Now</button>
+</a>
+
+</div>
+
+</div>
+
+<!-- Salon Card 4 -->
+
+<div class="salon-card">
+
+<img src="images/salon4.jpg" alt="Salon">
+
+<div class="salon-info">
+
+<h2>Elite Hair Studio</h2>
+
+<div class="rating">⭐⭐⭐⭐☆ (4.7)</div>
+
+<p>📍 Jaipur</p>
+
+<p>💇 Hair Styling • Coloring</p>
+
+<p><strong>₹799 onwards</strong></p>
+
+<a href="booking.html">
+<button>Book Now</button>
+</a>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// User Name
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+if(user){
+
+document.getElementById("username").innerText =
+user.full_name || user.name || "User";
+
+}
+
+// Logout
+
+function logout(){
+
+localStorage.removeItem("token");
+
+localStorage.removeItem("user");
+
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

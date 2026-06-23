@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Beauty Assistant | BeautyAI</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+💄 <span>BeautyAI</span>
+
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="booking.html">Book Salon</a>
+
+<a href="mybookings.html">My Bookings</a>
+
+<a href="profile.html">Profile</a>
+
+<a href="#" onclick="logout()">Logout</a>
+
+</nav>
+
+</header>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>BeautyAI</h2>
+
+<ul>
+
+<li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+<li><a href="booking.html">📅 Book Salon</a></li>
+
+<li><a href="mybookings.html">📖 My Bookings</a></li>
+
+<li><a href="chat.html">🤖 AI Assistant</a></li>
+
+<li><a href="profile.html">👤 Profile</a></li>
+
+<li><a href="#" onclick="logout()">🚪 Logout</a></li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="welcome">
+
+<h1>
+
+🤖 AI Beauty Assistant
+
+</h1>
+
+<p>
+
+Ask skincare, haircare, makeup, or salon-related questions.
+
+</p>
+
+</div>
+
+<!-- Chat Box -->
+
+<div class="chat-container">
+
+<div id="chatMessages" class="chat-messages">
+    <div class="user-message">
+
+Suggest a skincare routine for oily skin.
+
+</div>
+
+<div class="ai-message">
+
+For oily skin, use:
+
+✔ Gentle Cleanser
+
+✔ Niacinamide Serum
+
+✔ Oil-Free Moisturizer
+
+✔ SPF 50 Sunscreen
+
+Need product recommendations too?
+
+</div>
+
+<div class="ai-message">
+
+👋 Hello! I'm your AI Beauty Assistant.
+
+How can I help you today?
+
+</div>
+
+</div>
+
+<!-- Input Area -->
+
+<div class="chat-input">
+
+<input
+
+type="text"
+
+id="userInput"
+
+placeholder="Ask anything about beauty..."
+
+>
+
+<button
+
+id="sendBtn">
+
+Send
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/chat.js"></script>  
+
+</body>
+
+</html>

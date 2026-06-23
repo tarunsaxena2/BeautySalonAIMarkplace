@@ -1,0 +1,2384 @@
+/* ===============================
+   GOOGLE FONT
+==================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+--primary:#ff4da6;
+--secondary:#8b5cf6;
+--dark:#0b1120;
+--card:rgba(255,255,255,.08);
+--border:rgba(255,255,255,.12);
+--text:#ffffff;
+--shadow:0 8px 40px rgba(0,0,0,.35);
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+min-height:100vh;
+
+color:white;
+
+background:
+radial-gradient(circle at top left,#7c3aed 0%,transparent 45%),
+radial-gradient(circle at bottom right,#ff4da6 0%,transparent 35%),
+linear-gradient(135deg,#07111f,#0f172a,#141b34);
+
+background-attachment:fixed;
+
+overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(#ff4da6,#8b5cf6);
+
+border-radius:20px;
+
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+header{
+
+position:fixed;
+
+top:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:92%;
+
+height:80px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:0 35px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:22px;
+
+z-index:999;
+
+box-shadow:var(--shadow);
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:24px;
+
+font-weight:700;
+
+}
+
+.logo span{
+
+color:var(--primary);
+
+}
+
+nav{
+
+display:flex;
+
+align-items:center;
+
+gap:28px;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#ff4da6;
+
+}
+
+/* ===========================
+BUTTON
+=========================== */
+
+button{
+
+padding:14px 28px;
+
+border:none;
+
+outline:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+background:linear-gradient(90deg,#ff4da6,#8b5cf6);
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 0 25px rgba(255,77,166,.5);
+
+}
+
+/* ===========================
+HERO
+=========================== */
+
+.hero{
+
+width:100%;
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:130px 8% 50px;
+
+gap:60px;
+
+}
+
+.hero-left{
+
+flex:1;
+
+}
+
+.hero-left h1{
+
+font-size:68px;
+
+line-height:1.1;
+
+font-weight:800;
+
+margin-bottom:25px;
+
+}
+
+.hero-left h1 span{
+
+background:linear-gradient(#ff4da6,#b06cff);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero-left p{
+
+font-size:20px;
+
+line-height:34px;
+
+color:#d8d8d8;
+
+margin-bottom:40px;
+
+}
+
+.hero-btns{
+
+display:flex;
+
+gap:20px;
+
+}
+
+.hero-image{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.hero-image img{
+
+width:470px;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 90px rgba(255,77,166,.45);
+
+animation:float 5s ease infinite;
+
+}
+
+/* ===========================
+FEATURE BOXES
+=========================== */
+
+.features{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+padding:40px 8%;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:25px;
+
+padding:28px;
+
+transition:.35s;
+
+box-shadow:var(--shadow);
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 40px rgba(255,77,166,.35);
+
+}
+
+.card h2{
+
+margin:20px 0;
+
+font-size:22px;
+
+}
+
+.card p{
+
+color:#d5d5d5;
+
+line-height:28px;
+
+}
+
+/* ===========================
+ANIMATIONS
+=========================== */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.fade{
+
+animation:fade .9s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:330px;
+
+}
+
+.features{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+header{
+
+padding:0 20px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.features{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+.hero-left p{
+
+font-size:17px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+/* ==========================================
+   PART B - PREMIUM DASHBOARD UI
+==========================================*/
+
+/* Sidebar */
+
+.sidebar{
+
+position:fixed;
+
+left:20px;
+
+top:110px;
+
+width:260px;
+
+height:calc(100vh - 130px);
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:25px;
+
+padding:30px 20px;
+
+box-shadow:0 10px 40px rgba(0,0,0,.35);
+
+}
+
+.sidebar h2{
+
+font-size:26px;
+
+margin-bottom:40px;
+
+}
+
+.sidebar ul{
+
+list-style:none;
+
+}
+
+.sidebar li{
+
+margin-bottom:18px;
+
+}
+
+.sidebar a{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:15px 20px;
+
+border-radius:15px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.35s;
+
+font-weight:500;
+
+}
+
+.sidebar a:hover{
+
+background:linear-gradient(90deg,#ff4da6,#8b5cf6);
+
+transform:translateX(8px);
+
+}
+
+/* Main */
+
+.main{
+
+margin-left:310px;
+
+padding:120px 40px 40px;
+
+}
+
+/* Welcome */
+
+.welcome{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:35px;
+
+}
+
+.welcome h1{
+
+font-size:42px;
+
+font-weight:700;
+
+}
+
+.welcome span{
+
+color:#ff4da6;
+
+}
+
+/* Search */
+
+.search{
+
+display:flex;
+
+align-items:center;
+
+background:rgba(255,255,255,.08);
+
+border-radius:18px;
+
+padding:14px 20px;
+
+margin-bottom:35px;
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.search input{
+
+width:100%;
+
+background:none;
+
+border:none;
+
+outline:none;
+
+color:white;
+
+font-size:17px;
+
+}
+
+.search input::placeholder{
+
+color:#d5d5d5;
+
+}
+
+/* Stats */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+margin-bottom:35px;
+
+}
+
+.stat-card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:22px;
+
+padding:25px;
+
+border:1px solid rgba(255,255,255,.12);
+
+transition:.35s;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 30px rgba(255,77,166,.35);
+
+}
+
+.stat-card h4{
+
+color:#ddd;
+
+margin-bottom:12px;
+
+}
+
+.stat-card h2{
+
+font-size:38px;
+
+}
+
+/* Salon Grid */
+
+.salon-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:28px;
+
+}
+
+.salon-card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+overflow:hidden;
+
+border:1px solid rgba(255,255,255,.15);
+
+transition:.4s;
+
+}
+
+.salon-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 40px rgba(255,77,166,.45);
+
+}
+
+.salon-card img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+transition:.4s;
+
+}
+
+.salon-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.salon-info{
+
+padding:25px;
+
+}
+
+.salon-info h2{
+
+margin-bottom:10px;
+
+font-size:25px;
+
+}
+
+.salon-info p{
+
+color:#ddd;
+
+line-height:28px;
+
+margin-bottom:18px;
+
+}
+
+/* Rating */
+
+.rating{
+
+color:#FFD700;
+
+font-size:18px;
+
+margin-bottom:15px;
+
+}
+
+/* Status */
+
+.badge{
+
+display:inline-block;
+
+padding:8px 18px;
+
+border-radius:50px;
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+.pending{
+
+background:#ffc10733;
+
+color:#ffc107;
+
+}
+
+.approved{
+
+background:#00e67633;
+
+color:#00e676;
+
+}
+
+.rejected{
+
+background:#ff174433;
+
+color:#ff1744;
+
+}
+
+/* Booking Card */
+
+.booking-card{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:20px;
+
+margin-bottom:18px;
+
+border:1px solid rgba(255,255,255,.1);
+
+transition:.3s;
+
+}
+
+.booking-card:hover{
+
+transform:translateX(8px);
+
+}
+
+/* Profile */
+
+.profile{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.profile img{
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+border:3px solid #ff4da6;
+
+}
+
+.profile h3{
+
+font-size:20px;
+
+}
+
+/* Footer */
+
+footer{
+
+margin-top:70px;
+
+padding:30px;
+
+text-align:center;
+
+color:#bbb;
+
+}
+
+/* Mobile */
+
+@media(max-width:1000px){
+
+.sidebar{
+
+display:none;
+
+}
+
+.main{
+
+margin-left:0;
+
+padding:110px 20px;
+
+}
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.welcome{
+
+flex-direction:column;
+
+gap:15px;
+
+text-align:center;
+
+}
+
+.search{
+
+margin-top:20px;
+
+}
+
+}
+/* ==========================================
+   PART C1 - LOGIN | REGISTER | AI CHAT
+==========================================*/
+
+/* Floating Background Orbs */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:350px;
+
+height:350px;
+
+background:linear-gradient(#ff4da6,#8b5cf6);
+
+border-radius:50%;
+
+top:-120px;
+
+left:-120px;
+
+filter:blur(120px);
+
+opacity:.35;
+
+animation:moveOrb1 10s infinite alternate;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:350px;
+
+height:350px;
+
+background:linear-gradient(#00d4ff,#8b5cf6);
+
+border-radius:50%;
+
+bottom:-120px;
+
+right:-120px;
+
+filter:blur(120px);
+
+opacity:.30;
+
+animation:moveOrb2 12s infinite alternate;
+
+z-index:-2;
+
+}
+
+@keyframes moveOrb1{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+100%{
+
+transform:translate(120px,80px);
+
+}
+
+}
+
+@keyframes moveOrb2{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+100%{
+
+transform:translate(-120px,-70px);
+
+}
+
+}
+
+/* ==========================
+Glass Form
+==========================*/
+
+.form-container{
+
+width:420px;
+
+margin:140px auto;
+
+padding:40px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:30px;
+
+box-shadow:0 10px 45px rgba(0,0,0,.35);
+
+animation:fade .8s ease;
+
+}
+
+.form-container h1{
+
+text-align:center;
+
+margin-bottom:35px;
+
+font-size:34px;
+
+}
+
+/* ==========================
+Inputs
+==========================*/
+
+.form-group{
+
+margin-bottom:22px;
+
+}
+
+.form-group label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-size:15px;
+
+color:#ddd;
+
+}
+
+.form-group input,
+
+.form-group textarea,
+
+.form-group select{
+
+width:100%;
+
+padding:16px 18px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+color:white;
+
+font-size:16px;
+
+outline:none;
+
+transition:.35s;
+
+}
+
+.form-group input:focus,
+
+.form-group textarea:focus,
+
+.form-group select:focus{
+
+border:1px solid #ff4da6;
+
+box-shadow:0 0 20px rgba(255,77,166,.35);
+
+transform:scale(1.02);
+
+}
+
+.form-group input::placeholder,
+
+.form-group textarea::placeholder{
+
+color:#cfcfcf;
+
+}
+
+/* ==========================
+Submit Button
+==========================*/
+
+.submit-btn{
+
+width:100%;
+
+margin-top:15px;
+
+}
+
+/* ==========================
+Links
+==========================*/
+
+.form-footer{
+
+text-align:center;
+
+margin-top:25px;
+
+}
+
+.form-footer a{
+
+color:#ff4da6;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
+/* ==========================
+AI Chat
+==========================*/
+
+.chat-container{
+
+width:90%;
+
+max-width:950px;
+
+margin:120px auto;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+padding:30px;
+
+border:1px solid rgba(255,255,255,.15);
+
+}
+
+.chat-box{
+
+height:500px;
+
+overflow-y:auto;
+
+padding:15px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.user-message{
+
+align-self:flex-end;
+
+background:linear-gradient(90deg,#ff4da6,#8b5cf6);
+
+padding:16px 20px;
+
+border-radius:20px 20px 0 20px;
+
+max-width:70%;
+
+animation:fade .4s ease;
+
+}
+
+.bot-message{
+
+align-self:flex-start;
+
+background:rgba(255,255,255,.10);
+
+padding:16px 20px;
+
+border-radius:20px 20px 20px 0;
+
+max-width:70%;
+
+animation:fade .4s ease;
+
+}
+
+.chat-input{
+
+display:flex;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+.chat-input input{
+
+flex:1;
+
+padding:18px;
+
+border:none;
+
+outline:none;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+}
+
+.chat-input button{
+
+padding:16px 30px;
+
+}
+
+/* ==========================
+Loading Spinner
+==========================*/
+
+.loader{
+
+width:45px;
+
+height:45px;
+
+border:5px solid rgba(255,255,255,.2);
+
+border-top:5px solid #ff4da6;
+
+border-radius:50%;
+
+animation:spin 1s linear infinite;
+
+margin:30px auto;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+}
+
+/* ==========================
+Glow Effect
+==========================*/
+
+.glow {
+box-shadow:
+
+0 0 20px rgba(255,77,166,.4),
+
+0 0 40px rgba(255,77,166,.2);
+
+}
+
+/* ==========================
+Card Hover
+==========================*/
+
+.card:hover,
+
+.salon-card:hover,
+
+.stat-card:hover{
+
+transform:translateY(-8px) scale(1.02);
+
+transition:.35s;
+
+}
+
+/* ==========================
+Responsive
+==========================*/
+
+@media(max-width:768px){
+
+.form-container{
+
+width:92%;
+
+padding:25px;
+
+}
+
+.chat-container{
+
+width:95%;
+
+padding:20px;
+
+}
+
+.chat-box{
+
+height:350px;
+
+}
+
+.user-message,
+
+.bot-message{
+
+max-width:90%;
+
+}
+
+.chat-input{
+
+flex-direction:column;
+
+}
+
+.chat-input button{
+
+width:100%;
+
+}
+
+}
+/* ==========================================
+   PART C2 - BOOKING | PROFILE | ADMIN
+==========================================*/
+
+/* ==========================
+Booking Section
+==========================*/
+
+.booking-container{
+
+width:95%;
+
+max-width:1200px;
+
+margin:120px auto;
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:30px;
+
+}
+
+.booking-form{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+padding:35px;
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.booking-summary{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+padding:30px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.12);
+
+position:sticky;
+
+top:120px;
+
+height:fit-content;
+
+}
+
+.booking-summary h2{
+
+margin-bottom:20px;
+
+}
+
+.booking-summary p{
+
+margin:15px 0;
+
+color:#ddd;
+
+}
+
+/* ==========================
+Profile
+==========================*/
+
+.profile-container{
+
+width:90%;
+
+max-width:900px;
+
+margin:120px auto;
+
+display:flex;
+
+gap:35px;
+
+align-items:center;
+
+background:rgba(255,255,255,.08);
+
+padding:40px;
+
+border-radius:30px;
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.profile-avatar{
+
+width:170px;
+
+height:170px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:5px solid #ff4da6;
+
+box-shadow:0 0 30px rgba(255,77,166,.45);
+
+}
+
+.profile-details{
+
+flex:1;
+
+}
+
+.profile-details h1{
+
+margin-bottom:15px;
+
+}
+
+.profile-details p{
+
+margin:10px 0;
+
+color:#ddd;
+
+font-size:17px;
+
+}
+
+/* ==========================
+Table
+==========================*/
+
+.table-container{
+
+width:95%;
+
+margin:120px auto;
+
+overflow-x:auto;
+
+background:rgba(255,255,255,.08);
+
+border-radius:25px;
+
+backdrop-filter:blur(18px);
+
+padding:20px;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+table th{
+
+padding:18px;
+
+background:rgba(255,255,255,.12);
+
+text-align:left;
+
+}
+
+table td{
+
+padding:18px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+table tr:hover{
+
+background:rgba(255,255,255,.05);
+
+}
+
+/* ==========================
+Admin Cards
+==========================*/
+
+.admin-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+margin-bottom:35px;
+
+}
+
+.admin-card{
+
+padding:30px;
+
+background:rgba(255,255,255,.08);
+
+border-radius:25px;
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+transition:.35s;
+
+}
+
+.admin-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 30px rgba(255,77,166,.35);
+
+}
+
+.admin-card h4{
+
+color:#ddd;
+
+margin-bottom:10px;
+
+}
+
+.admin-card h1{
+
+font-size:42px;
+
+}
+
+/* ==========================
+Status Badges
+==========================*/
+
+.badge-success{
+
+background:#22c55e33;
+
+color:#22c55e;
+
+padding:8px 16px;
+
+border-radius:50px;
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+.badge-warning{
+
+background:#facc1533;
+
+color:#facc15;
+
+padding:8px 16px;
+
+border-radius:50px;
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+.badge-danger{
+
+background:#ef444433;
+
+color:#ef4444;
+
+padding:8px 16px;
+
+border-radius:50px;
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+/* ==========================
+Action Buttons
+==========================*/
+
+.action-btn{
+
+padding:10px 18px;
+
+border:none;
+
+border-radius:12px;
+
+margin:3px;
+
+cursor:pointer;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.approve-btn{
+
+background:#22c55e;
+
+color:white;
+
+}
+
+.reject-btn{
+
+background:#ef4444;
+
+color:white;
+
+}
+
+.edit-btn{
+
+background:#3b82f6;
+
+color:white;
+
+}
+
+.delete-btn{
+
+background:#f97316;
+
+color:white;
+
+}
+
+.action-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+/* ==========================
+Timeline
+==========================*/
+
+.timeline{
+
+margin-top:30px;
+
+}
+
+.timeline-item{
+
+position:relative;
+
+padding-left:40px;
+
+margin-bottom:25px;
+
+}
+
+.timeline-item::before{
+
+content:"";
+
+position:absolute;
+
+left:10px;
+
+top:5px;
+
+width:15px;
+
+height:15px;
+
+background:#ff4da6;
+
+border-radius:50%;
+
+}
+
+.timeline-item::after{
+
+content:"";
+
+position:absolute;
+
+left:16px;
+
+top:20px;
+
+width:3px;
+
+height:70px;
+
+background:rgba(255,255,255,.2);
+
+}
+
+.timeline-item:last-child::after{
+
+display:none;
+
+}
+
+/* ==========================
+Notification Card
+==========================*/
+
+.notification{
+
+padding:18px;
+
+margin-bottom:15px;
+
+background:rgba(255,255,255,.08);
+
+border-left:5px solid #ff4da6;
+
+border-radius:15px;
+
+}
+
+/* ==========================
+Responsive
+==========================*/
+
+@media(max-width:992px){
+
+.booking-container{
+
+grid-template-columns:1fr;
+
+}
+
+.profile-container{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.admin-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.admin-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.profile-avatar{
+
+width:130px;
+
+height:130px;
+
+}
+
+table{
+
+font-size:14px;
+
+}
+
+}
+/* ==========================
+Booking Table
+==========================*/
+
+.table-container{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+padding:25px;
+
+border:1px solid rgba(255,255,255,.12);
+
+overflow-x:auto;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+th{
+
+padding:18px;
+
+text-align:left;
+
+background:rgba(255,255,255,.10);
+
+}
+
+td{
+
+padding:18px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.booking-row{
+
+transition:.35s;
+
+}
+
+.booking-row:hover{
+
+background:rgba(255,255,255,.05);
+
+transform:scale(1.01);
+
+}
+
+.delete-btn{
+
+background:#ef4444;
+
+padding:10px 18px;
+
+border:none;
+
+border-radius:12px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.delete-btn:hover{
+
+background:#dc2626;
+
+}
+
+.badge{
+
+padding:8px 16px;
+
+border-radius:50px;
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+.approved{
+
+background:#22c55e33;
+
+color:#22c55e;
+
+}
+
+.pending{
+
+background:#facc1533;
+
+color:#facc15;
+
+}
+
+.rejected{
+
+background:#ef444433;
+
+color:#ef4444;
+
+}
+/* ==========================
+Booking Animation
+==========================*/
+
+.booking-row{
+
+transition:.35s ease;
+
+}
+
+.booking-row:hover{
+
+background:rgba(255,255,255,.05);
+
+transform:scale(1.01);
+
+}
+
+.booking-row td{
+
+transition:.3s;
+
+}
+
+.search input{
+
+transition:.35s;
+
+}
+
+.search input:focus{
+
+box-shadow:0 0 25px rgba(255,77,166,.4);
+
+}
+
+.delete-btn{
+
+transition:.35s;
+
+}
+
+.delete-btn:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 20px rgba(239,68,68,.4);
+
+}
+/* ==========================
+AI Chat
+==========================*/
+
+.chat-container{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+padding:25px;
+
+height:75vh;
+
+display:flex;
+
+flex-direction:column;
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.chat-messages{
+
+flex:1;
+
+overflow-y:auto;
+
+padding:10px;
+
+}
+
+.ai-message{
+
+max-width:70%;
+
+background:rgba(255,255,255,.12);
+
+padding:15px;
+
+border-radius:20px;
+
+margin-bottom:20px;
+
+}
+
+.user-message{
+
+max-width:70%;
+
+background:#ff4da6;
+
+padding:15px;
+
+border-radius:20px;
+
+margin-left:auto;
+
+margin-bottom:20px;
+
+color:white;
+
+}
+
+.chat-input{
+
+display:flex;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.chat-input input{
+
+flex:1;
+
+padding:16px;
+
+border:none;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.10);
+
+color:white;
+
+}
+
+.chat-input button{
+
+padding:16px 28px;
+
+border:none;
+
+border-radius:15px;
+
+background:#ff4da6;
+
+color:white;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
+
+.chat-input button:hover{
+
+transform:scale(1.05);
+
+}
+/* ==========================
+Chat Animation
+==========================*/
+
+.chat-messages{
+
+scroll-behavior:smooth;
+
+}
+
+.ai-message{
+
+animation:fadeIn .4s ease;
+
+}
+
+.user-message{
+
+animation:fadeIn .4s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+#typing{
+
+font-style:italic;
+
+opacity:.8;
+
+}
+/* Thinking Animation */
+
+#typing{
+
+font-style:italic;
+
+opacity:.8;
+
+animation:pulse 1s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+opacity:.3;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.3;
+
+}
+
+}
+/* ==========================
+Profile Page
+==========================*/
+
+.profile-container{
+
+display:grid;
+
+grid-template-columns:320px 1fr;
+
+gap:30px;
+
+width:95%;
+
+max-width:1200px;
+
+margin:120px auto;
+
+}
+
+.profile-left{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+padding:30px;
+
+border-radius:25px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.profile-right{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+padding:35px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+.profile-avatar{
+
+width:170px;
+
+height:170px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:5px solid #ff4da6;
+
+margin-bottom:20px;
+
+box-shadow:0 0 25px rgba(255,77,166,.4);
+
+}
+
+.profile-right button{
+
+margin-top:20px;
+
+width:100%;
+
+}
+
+@media(max-width:900px){
+
+.profile-container{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* ==========================
+Profile Extra Cards
+==========================*/
+
+.profile-right .card{
+
+margin-top:30px;
+
+padding:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,.12);
+
+transition:.35s;
+
+}
+
+.profile-right .card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 0 25px rgba(255,77,166,.25);
+
+}
+
+.profile-right table{
+
+width:100%;
+
+margin-top:15px;
+
+border-collapse:collapse;
+
+}
+
+.profile-right th,
+
+.profile-right td{
+
+padding:14px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+text-align:left;
+
+}
+
+.profile-right ul{
+
+padding-left:20px;
+
+}
+
+.profile-right li{
+
+margin:10px 0;
+
+font-size:16px;
+
+}
