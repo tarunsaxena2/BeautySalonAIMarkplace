@@ -152,7 +152,7 @@ Add project screenshots here.
 
 ## 👨‍💻 Developer
 
-**Tarun HCST**
+**Tarun Saxena**
 
 ---
 
