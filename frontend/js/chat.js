@@ -86,7 +86,7 @@ const token=localStorage.getItem("token");
 
 const response=await fetch(
 
-"http://localhost:5000/api/ai/chat",
+"http://https://beauty-salon-ai-markplace-ve7m.vercel.app/api/ai/chat",
 
 {
 

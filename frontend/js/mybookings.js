@@ -110,7 +110,7 @@ user.full_name || user.name
  const token=localStorage.getItem("token");
 
  const response=await fetch(
- "http://localhost:5000/api/bookings",
+ "http://https://beauty-salon-ai-markplace-ve7m.vercel.app/api/bookings",
  {
 
  headers:{

@@ -1,6 +1,6 @@
 async function loadBookings(){
 
-const response=await fetch("http://localhost:5000/api/bookings");
+const response=await fetch("http://https://beauty-salon-ai-markplace-ve7m.vercel.app/api/bookings");
 
 const bookings=await response.json();
 
@@ -46,7 +46,7 @@ Reject
 
 async function approve(id){
 
-await fetch("http://localhost:5000/api/bookings/"+id,{
+await fetch("http://https://beauty-salon-ai-markplace-ve7m.vercel.app/api/bookings/"+id,{
 
 method:"PUT",
 
@@ -70,7 +70,7 @@ loadBookings();
 
 async function rejectBooking(id){
 
-await fetch("http://localhost:5000/api/bookings/"+id,{
+await fetch("http://https://beauty-salon-ai-markplace-ve7m.vercel.app/api/bookings/"+id,{
 
 method:"PUT",
 

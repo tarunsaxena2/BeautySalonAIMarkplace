@@ -1,6 +1,6 @@
 async function loadSalons(){
 
-const response = await fetch("http://localhost:5000/api/salons");
+const response = await fetch("http://https://beauty-salon-ai-markplace-ve7m.vercel.app/api/salons");
 
 const salons = await response.json();
 
