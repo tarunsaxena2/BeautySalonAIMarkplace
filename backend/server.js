@@ -9,15 +9,12 @@ app.use(express.json());
 
 const authRoutes = require("./routes/authRoutes");
 const salonRoutes = require("./routes/salonRoutes");
-const bookingRoutes=require("./routes/bookingRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 const aiRoutes = require("./routes/aiRoutes");
-
-
-app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/salons", salonRoutes);
-app.use("/api/bookings",bookingRoutes);
+app.use("/api/bookings", bookingRoutes);
 app.use("/api/ai", aiRoutes);
 
 app.get("/", (req, res) => {
@@ -26,8 +23,12 @@ app.get("/", (req, res) => {
     });
 });
 
-const PORT = process.env.PORT || 5000;
+// Local development only
+if (process.env.NODE_ENV !== "production") {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+module.exports = app;
